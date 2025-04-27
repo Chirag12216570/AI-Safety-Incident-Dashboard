@@ -69,12 +69,12 @@ ai-safety-dashboard/
 
 ## 📸 Screenshots
 
-> Add screenshots of your dashboard below:
 
-![AI Safety Dashboard Screenshot 1](./public/your-image-1.png)
-![AI Safety Dashboard Screenshot 2](./public/your-image-2.png)
+![Screenshot 2025-04-27 212222](https://github.com/user-attachments/assets/f8906bfd-d3a0-4396-bb30-bd73b1fc9b61)
 
-(After uploading images, replace `your-image-1.png` and `your-image-2.png`.)
+![Screenshot 2025-04-27 213412](https://github.com/user-attachments/assets/38bb5149-f4c6-4040-baa4-4b16a4927dbd)
+
+
 
 ---
 
@@ -102,7 +102,7 @@ Feel free to fork the repository, open an issue, or submit a pull request.
 
 ## 📞 Contact
 
-- GitHub: [your-username](https://github.com/your-username)
+- GitHub: [Chirag12216570](https://github.com/Chirag12216570)
 
 ---
 
