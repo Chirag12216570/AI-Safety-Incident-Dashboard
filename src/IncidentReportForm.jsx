@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
+import './styles.css';
 
 function IncidentReportForm({ onAddIncident }) {
   const [formData, setFormData] = useState({
     title: '',
     description: '',
     severity: '',
-    reported_at: '',
   });
 
   const handleChange = (e) => {
@@ -15,12 +15,14 @@ function IncidentReportForm({ onAddIncident }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddIncident(formData);
-    setFormData({ title: '', description: '', severity: '', reported_at: '' });
+    const currentDateTime = new Date().toISOString();
+    onAddIncident({ ...formData, reported_at: currentDateTime });
+    setFormData({ title: '', description: '', severity: '' });
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className="form-wrapper">
+    <form onSubmit={handleSubmit} className="incident-form">
       <h2 className="section-heading">Report New Incident</h2>
       <div>
         <label>Title:</label>
@@ -55,18 +57,11 @@ function IncidentReportForm({ onAddIncident }) {
           <option value="High">High</option>
         </select>
       </div>
-      <div>
-        <label>Reported At:</label>
-        <input
-          type="datetime-local"
-          name="reported_at"
-          value={formData.reported_at}
-          onChange={handleChange}
-          required
-        />
+      <div className="btn-wrapper">
+      <button type="submit" className="submit-button">Submit</button>
       </div>
-      <button type="submit">Submit</button>
     </form>
+    </div>
   );
 }
 

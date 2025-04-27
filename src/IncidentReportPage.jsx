@@ -60,12 +60,13 @@ function IncidentReportPage() {
 
   return (
     <>
-      <h1 className="main-heading">Incident Reporting Dashboard</h1>
-      <hr className="horizontal-line" />
-      <div className="container">
-        <IncidentReportForm onAddIncident={addIncident} />
-        <div className="vertical-line"></div> {/* Vertical Breaker */}
-        <div className="incident-panel">
+      <div className="main-heading">
+        <h1>Incident Reporting Dashboard</h1>
+      </div>
+      <IncidentReportForm onAddIncident={addIncident} />
+
+      <div className="incident-panel">
+        <div className="reported-incidents-header">
           <h2 className="section-heading">Reported Incidents</h2>
           <div className="filters">
             <select value={filterSeverity} onChange={(e) => setFilterSeverity(e.target.value)}>
@@ -74,12 +75,13 @@ function IncidentReportPage() {
               <option value="Medium">Medium</option>
               <option value="High">High</option>
             </select>
-
-            <button onClick={() => setSortOrder('newest')}>Newest</button>
-            <button onClick={() => setSortOrder('oldest')}>Oldest</button>
+            <select value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
+              <option value="newest">Newest First</option>
+              <option value="oldest">Oldest First</option>
+            </select>
           </div>
-          <IncidentList incidents={filteredIncidents} onViewDetails={handleViewDetails} />
         </div>
+        <IncidentList incidents={filteredIncidents} onViewDetails={handleViewDetails} />
       </div>
 
       {selectedIncident && (
